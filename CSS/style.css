@@ -176,7 +176,7 @@ body {
 }
 
 .summary-box h4 {
-    font-size: 1.5rem; 
+    font-size: 1.5rem; /* Font size for headings */
     font-weight: 600; 
     margin-bottom: 10px; 
 }
