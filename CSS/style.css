@@ -1,0 +1,29 @@
+body {
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.background {
+    margin: 0;
+    min-height: 100vh;
+    background-image: url(
+        /Assets/background.jpg
+    );
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    position: inherit;
+}
+
+.header-container img {
+    margin-right: 10px; /* Space between logo and text */
+    width: 65px; /* Adjust the size as needed */
+}
+
+.header-container span {
+    font-size: 2rem; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    color: #007bff; /* Text color */
+}
+
