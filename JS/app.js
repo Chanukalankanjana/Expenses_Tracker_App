@@ -107,6 +107,70 @@ function deleteIncome(id) {
     updateChart();
 }
 
+function addExpense() {
+    const description = document.getElementById('expense-description').value;
+    const amount = document.getElementById('expense-amount').value;
+    const date = document.getElementById('expense-date').value;
+
+    const expenses = JSON.parse(localStorage.getItem('expenses')) || [];
+
+    if (editExpenseId) {
+        const index = expenses.findIndex(exp => exp.id === editExpenseId);
+        expenses[index] = {
+            description,
+            amount: parseFloat(amount).toFixed(2),
+            category: selectedCategory,
+            id: editExpenseId,
+            date
+        };
+        editExpenseId = null;
+    } else {
+        const expense = {
+            description,
+            amount: parseFloat(amount).toFixed(2),
+            category: selectedCategory,
+            id: Date.now(),
+            date
+        };
+        expenses.push(expense);
+    }
+
+    localStorage.setItem('expenses', JSON.stringify(expenses));
+    displayExpenses();
+    updateChart();
+    clearExpenseForm();
+}
+
+function clearExpenseForm() {
+    document.getElementById('expense-description').value = '';
+    document.getElementById('expense-amount').value = '';
+    document.getElementById('expense-date').value = '';
+    selectedCategory = 'Food';
+    document.querySelectorAll('.category-item').forEach(btn => btn.classList.remove('active'));
+    document.querySelector('[data-category="Food"]').classList.add('active');
+}
+
+function displayExpenses() {
+    const expenses = JSON.parse(localStorage.getItem('expenses')) || [];
+    const expensesList = document.getElementById('expenses-list');
+
+    expensesList.innerHTML = expenses.map(exp => `
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <h5>${exp.description}</h5>
+                <small>${exp.category} - ${exp.date}</small>
+            </div>
+            <div>
+                <span>Rs. ${exp.amount}</span>
+                <div class="expense-actions">
+                    <button class="btn btn-sm btn-warning" onclick="editExpense(${exp.id})">Edit</button>
+                    <button class="btn btn-sm btn-danger" onclick="deleteExpense(${exp.id})">Delete</button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
 
 
 
