@@ -140,6 +140,33 @@
                             <h2 class="card-title mb-4">Expense Visualization</h2>
                             <canvas id="expense-chart"></canvas>
                         </div>
+
+                        <div class="card p-4 shadow-sm">
+                            <h2 class="card-title mb-4 text-center">Income & Remaining Amount</h2>
+                            <div id="income-summary" class="mb-4 text-center">
+                                <div class="row">
+                                    <div class="col-sm-4 mb-3">
+                                        <div class="summary-box bg-custom-income">
+                                            <h4 class="mb-1">Total Income</h4>
+                                            <p class="mb-0">Rs. <span id="total-income">0</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 mb-3">
+                                        <div class="summary-box bg-custom-expenses">
+                                            <h4 class="mb-1">Total Expenses</h4>
+                                            <p class="mb-0">Rs. <span id="total-expenses">0</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 mb-3">
+                                        <div class="summary-box bg-custom-remaining">
+                                            <h4 class="mb-1">Remaining Amount</h4>
+                                            <p class="mb-0">Rs. <span id="remaining-amount">0</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-outline-primary btn-block">Clear Summary</button>
+                        </div>                              
                     </div>
                 </div>
             </div>

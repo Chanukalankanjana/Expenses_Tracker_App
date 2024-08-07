@@ -115,3 +115,48 @@ body {
 #expense-chart {
     height: 300px;
 }
+
+.card-body {
+    padding: 20px;
+}
+
+.summary-box {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.summary-box h4 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.summary-box p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.summary-box {
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 1.2em;
+}
+
+.bg-custom-income {
+    background-color: #28a745; /* Green */
+    color: #ffffff; /* White text */
+}
+
+.bg-custom-expenses {
+    background-color: #ff5733; /* Red-Orange */
+    color: #ffffff; /* White text */
+}
+
+.bg-custom-remaining {
+    background-color: #17a2b8; /* Teal */
+    color: #ffffff; /* White text */
+}
+
+.btn-custom:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
