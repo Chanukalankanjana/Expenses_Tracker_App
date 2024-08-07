@@ -104,3 +104,14 @@ body {
 .btn-outline-primary {
     border-radius: 8px;
 }
+
+#income-form .form-control,
+#expense-form .form-control {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 12px;
+}
+
+#expense-chart {
+    height: 300px;
+}
