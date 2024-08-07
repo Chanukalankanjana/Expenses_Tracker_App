@@ -185,7 +185,13 @@ function editExpense(id) {
     document.querySelector(`[data-category="${selectedCategory}"]`).classList.add('active');
 }
 
-
+function deleteExpense(id) {
+    let expenses = JSON.parse(localStorage.getItem('expenses'));
+    expenses = expenses.filter(exp => exp.id !== id);
+    localStorage.setItem('expenses', JSON.stringify(expenses));
+    displayExpenses();
+    updateChart();
+}
 
 function initApp() {
     displayExpenses();
