@@ -1,11 +1,56 @@
-document.getElementById('expense-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    addExpense();
+document.getElementById('income-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+
+    // Get input values
+    const description = document.getElementById('income-description').value.trim();
+    const amount = document.getElementById('income-amount').value.trim();
+    const date = document.getElementById('income-date').value.trim();
+
+    // Check if all fields are filled
+    if (description && amount && date) {
+        Swal.fire({
+            title: 'Good job!',
+            text: 'Income added successfully!',
+            icon: 'success'
+        });
+
+        addIncome();
+
+    } else {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please fill out all fields.',
+            icon: 'error'
+        });
+    }
 });
 
-document.getElementById('income-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    addIncome();
+document.getElementById('expense-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+
+    // Get input values
+    const description = document.getElementById('expense-description').value.trim();
+    const amount = document.getElementById('expense-amount').value.trim();
+    const date = document.getElementById('expense-date').value.trim();
+    const category = document.querySelector('.category-item.active'); // Get the selected category
+
+    // Check if all fields are filled and a category is selected
+    if (description && amount && date && category) {
+        Swal.fire({
+            title: 'Good job!',
+            text: 'Expense added successfully!',
+            icon: 'success'
+        });
+
+        addExpense();
+
+    } else {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please fill out all fields and select a category.',
+            icon: 'error'
+        });
+    }
 });
 
 document.getElementById('clear-summary-btn').addEventListener('click', function() {
