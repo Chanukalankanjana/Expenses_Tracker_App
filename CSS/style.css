@@ -1,9 +1,9 @@
 body {
     background-color: #f0f2f5;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0; 
+    padding: 0; 
+    overflow-x: hidden; 
 }
 
 .background {
@@ -16,7 +16,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: -1; /* Ensure background stays behind content */
+    z-index: -1; 
 }
 
 .header-container {
@@ -26,48 +26,48 @@ body {
     transform: translateX(-50%);
     width: 85%;
     background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
-    z-index: 1000; /* Ensure header stays on top */
+    z-index: 1000; /* Header stays on top */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px; /* Add some padding if needed */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Optional: add a shadow for better visibility */
+    padding: 10px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
 .header-container img {
-    margin-right: 10px; /* Space between logo and text */
-    width: 65px; /* Adjust the size as needed */
+    margin-right: 10px; 
+    width: 65px;
 }
 
 .header-container span {
-    font-size: 2rem; /* Larger font size */
-    font-weight: bold; /* Bold text */
-    color: #007bff; /* Text color */
+    font-size: 2rem; 
+    font-weight: bold; 
+    color: #007bff; 
 }
 
 .expenses-tracker {
-    padding-top: 100px; /* Ensure content is not hidden under the fixed header */
+    padding-top: 100px; 
 }
 
 .card {
-    border-radius: 12px; /* Slightly increased border radius for smoother edges */
-    border: 1px solid #d0d0d0; /* Softer border color for a modern look */
-    background-color: #ffffff; /* Ensuring the background color is set */
-    color: #000000; /* Ensuring text color is readable */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+    border-radius: 12px; 
+    border: 1px solid #d0d0d0; 
+    background-color: #ffffff; 
+    color: #000000; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Slight lift effect on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
 
 .card-title {
-    font-size: 1.75rem; /* Slightly larger font size for prominence */
-    font-weight: 600; /* Semi-bold for a balanced weight */
-    color: #333; /* Consistent color */
-    margin-bottom: 10px; /* Spacing below the title */
+    font-size: 1.75rem; 
+    font-weight: 600; 
+    color: #333; 
+    margin-bottom: 10px; 
     border-bottom: 2px solid #e0e0e0; /* Subtle underline effect */
     padding-bottom: 5px; /* Padding for the underline effect */
 }
@@ -77,18 +77,18 @@ body {
 }
 
 .card-text {
-    font-size: 1rem; /* Standard font size for text */
-    line-height: 1.6; /* Improved readability with line height */
-    color: #555; /* Slightly lighter text color for less emphasis */
+    font-size: 1rem; 
+    line-height: 1.6; 
+    color: #555;
 }
 
 .card-footer {
-    background-color: #f7f7f7; /* Light background for the footer */
-    padding: 15px; /* Consistent padding for the footer */
-    border-top: 1px solid #e0e0e0; /* Border to separate footer */
-    text-align: center; /* Center align footer text */
-    font-size: 0.875rem; /* Smaller font size for footer text */
-    color: #777; /* Lighter color for footer text */
+    background-color: #f7f7f7; 
+    padding: 15px; 
+    border-top: 1px solid #e0e0e0; 
+    text-align: center; 
+    font-size: 0.875rem; 
+    color: #777; 
 }
 
 #income-form .form-control,
@@ -103,15 +103,15 @@ body {
     flex-direction: column; /* Align items vertically */
     align-items: center;
     justify-content: center;
-    width: 120px; /* Uniform width for all buttons */
-    height: 120px; /* Uniform height for all buttons */
+    width: 120px;
+    height: 120px; 
     border-radius: 8px;
     margin: 5px;
     padding: 10px;
     text-align: center;
     position: relative;
-    background-color: #fff; /* Ensure background color for better visibility */
-    border: 1px solid #007bff; /* Button border color */
+    background-color: #fff; 
+    border: 1px solid #007bff; 
 }
 
 .category-icon {
@@ -150,43 +150,43 @@ body {
 }
 
 .summary-box {
-    padding: 20px; /* Consistent padding */
-    border-radius: 10px; /* Rounded corners */
-    color: #14c400; /* White text color */
-    text-align: center; /* Center text alignment */
-    height: 150px; /* Fixed height to ensure uniform size */
-    display: flex; /* Flexbox for centering content */
-    flex-direction: column; /* Vertical alignment */
-    justify-content: center; /* Center content vertically */
+    padding: 20px; 
+    border-radius: 10px; 
+    color: #14c400; 
+    text-align: center; 
+    height: 150px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
 }
 
 .bg-custom-income {
-    background-color: #ffffff; /* Ensure background color for better visibility */
-    border: 1px solid #007bff; /* Button border color */
+    background-color: #ffffff; 
+    border: 1px solid #007bff; 
 }
 
 .bg-custom-expenses {
-    background-color: #ffffff; /* Ensure background color for better visibility */
-    border: 1px solid #007bff; /* Button border color */
+    background-color: #ffffff; 
+    border: 1px solid #007bff; 
 }
 
 .bg-custom-remaining {
-    background-color: #ffffff; /* Ensure background color for better visibility */
-    border: 1px solid #007bff; /* Button border color */
+    background-color: #ffffff; 
+    border: 1px solid #007bff; 
 }
 
 .summary-box h4 {
-    font-size: 1.5rem; /* Font size for headings */
-    font-weight: 600; /* Semi-bold weight */
-    margin-bottom: 10px; /* Margin below heading */
+    font-size: 1.5rem; 
+    font-weight: 600; 
+    margin-bottom: 10px; 
 }
 
 .summary-box p {
-    font-size: 1.25rem; /* Font size for paragraphs */
-    margin: 0; /* Remove default margin */
+    font-size: 1.25rem; 
+    margin: 0; 
 }
 
 
 .btn-custom:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3; 
 }
