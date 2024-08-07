@@ -8,17 +8,16 @@
     <title>Expense Tracker</title>
 </head>
 <body>
-    <div class="background">
-        <div class="expenses-tracker">
-            <div class="container">
-                <header class="header-container d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-                    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                        <img src="Assets/logo.png" alt="Expense Tracker Logo" width="65px" class="img-fluid">
-                        <span>Expense Tracker</span>
-                    </a>
-                </header>
-            </div>
+    <div class="background"></div> <!-- Ensure this is positioned outside main content to be fixed -->
+    <div class="container">
+        <header class="header-container d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <img src="Assets/logo.png" alt="Expense Tracker Logo" width="65px" class="img-fluid">
+                <span>Expense Tracker</span>
+            </a>
+        </header>
 
+        <div class="expenses-tracker">
             <div class="container mt-4">
                 <div class="row">
                     <div class="col-lg-6">
@@ -40,9 +39,95 @@
                                 <button type="submit" class="btn btn-outline-primary btn-block">Add Income</button>
                             </form>
                         </div>
+
+                        <div class="card p-4 shadow-sm mb-4">
+                            <h2 class="card-title mb-4">Add Expense</h2>
+                            <form id="expenses-form">
+                                <div class="mb-3">
+                                    <label for="expense-description" class="form-label">Description</label>
+                                    <input type="text" class="form-control" id="expense-description" placeholder="e.g., Groceries" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="expense-amount" class="form-label">Amount</label>
+                                    <input type="number" class="form-control" id="expense-amount" placeholder="e.g., Rs.5000" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Category</label>
+                                    <div class="d-flex flex-wrap justify-content-start">
+                                        <button class="btn btn-outline-primary category-item" data-category="Food">
+                                            <img src="Assets/food.png" alt="Food" class="category-icon">
+                                            <div class="category-name">Food</div>
+                                        </button>
+                                        <button class="btn btn-outline-primary category-item" data-category="Bills">
+                                            <img src="Assets/bills.png" alt="Bills" class="category-icon">
+                                            <div class="category-name">Bills</div>
+                                        </button>
+                                        <button class="btn btn-outline-primary category-item" data-category="Car">
+                                            <img src="Assets/car.png" alt="Car" class="category-icon">
+                                            <div class="category-name">Car</div>
+                                        </button>
+                                        <button class="btn btn-outline-primary category-item" data-category="Clothes">
+                                            <img src="Assets/clothes.png" alt="Clothes" class="category-icon">
+                                            <div class="category-name">Clothes</div>
+                                        </button>
+                                        <button class="btn btn-outline-primary category-item" data-category="Communication">
+                                            <img src="Assets/communication.png" alt="Communication" class="category-icon">
+                                            <div class="category-name">Communication</div>
+                                        </button>
+                                        <button class="btn btn-outline-primary category-item" data-category="Eating Out">
+                                            <img src="Assets/eating_out.png" alt="Eating Out" class="category-icon">
+                                            <div class="category-name">Eating Out</div>
+                                        </button>
+                                        <button class="btn btn-outline-primary category-item" data-category="Entertainment">
+                                            <img src="Assets/entertainment.png" alt="Entertainment" class="category-icon">
+                                            <div class="category-name">Entertainment</div>
+                                        </button>
+                                        <button class="btn btn-outline-primary category-item" data-category="Gifts">
+                                            <img src="Assets/gifts.png" alt="Gifts" class="category-icon">
+                                            <div class="category-name">Gifts</div>
+                                        </button>
+                                        <button class="btn btn-outline-primary category-item" data-category="Health">
+                                            <img src="Assets/health.png" alt="Health" class="category-icon">
+                                            <div class="category-name">Health</div>
+                                        </button>
+                                        <button class="btn btn-outline-primary category-item" data-category="House">
+                                            <img src="Assets/house.png" alt="House" class="category-icon">
+                                            <div class="category-name">House</div>
+                                        </button>
+                                        <button class="btn btn-outline-primary category-item" data-category="Pets">
+                                            <img src="Assets/pets.png" alt="Pets" class="category-icon">
+                                            <div class="category-name">Pets</div>
+                                        </button>
+                                        <button class="btn btn-outline-primary category-item" data-category="Sports">
+                                            <img src="Assets/sports.png" alt="Sports" class="category-icon">
+                                            <div class="category-name">Sports</div>
+                                        </button>
+                                        <button class="btn btn-outline-primary category-item" data-category="Taxi">
+                                            <img src="Assets/taxi.png" alt="Taxi" class="category-icon">
+                                            <div class="category-name">Taxi</div>
+                                        </button>
+                                        <button class="btn btn-outline-primary category-item" data-category="Toiletry">
+                                            <img src="Assets/toiletry.png" alt="Toiletry" class="category-icon">
+                                            <div class="category-name">Toiletry</div>
+                                        </button>
+                                        <button class="btn btn-outline-primary category-item" data-category="Transport">
+                                            <img src="Assets/other.png" alt="Other" class="category-icon">
+                                            <div class="category-name">Other</div>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="expense-date" class="form-label">Date</label>
+                                    <input type="date" class="form-control" id="expense-date" required>
+                                </div>
+                                <button type="submit" class="btn btn-outline-primary btn-block">Add Expense</button>
+                            </form>
+                        </div>
                     </div>
 
-                    <div class="col-lg-6"></div>
+                    <div class="col-lg-6">
+
+                    </div>
                 </div>
             </div>
         </div>
