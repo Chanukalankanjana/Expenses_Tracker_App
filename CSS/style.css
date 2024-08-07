@@ -150,41 +150,39 @@ body {
 }
 
 .summary-box {
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.summary-box h4 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-}
-
-.summary-box p {
-    font-size: 1.5rem;
-    margin: 0;
-}
-
-.summary-box {
-    border-radius: 5px;
-    padding: 20px;
-    font-size: 1.2em;
+    padding: 20px; /* Consistent padding */
+    border-radius: 10px; /* Rounded corners */
+    color: #ffffff; /* White text color */
+    text-align: center; /* Center text alignment */
+    height: 150px; /* Fixed height to ensure uniform size */
+    display: flex; /* Flexbox for centering content */
+    flex-direction: column; /* Vertical alignment */
+    justify-content: center; /* Center content vertically */
 }
 
 .bg-custom-income {
-    background-color: #00ab28; /* Green */
-    color: #ffffff; /* White text */
+    background-color: #28a745; /* Green background for income */
 }
 
 .bg-custom-expenses {
-    background-color: #eeb300; /* Red-Orange */
-    color: #ffffff; /* White text */
+    background-color: #dc3545; /* Red background for expenses */
 }
 
 .bg-custom-remaining {
-    background-color: #00379e; /* Teal */
-    color: #ffffff; /* White text */
+    background-color: #ffc107; /* Yellow background for remaining amount */
 }
+
+.summary-box h4 {
+    font-size: 1.5rem; /* Font size for headings */
+    font-weight: 600; /* Semi-bold weight */
+    margin-bottom: 10px; /* Margin below heading */
+}
+
+.summary-box p {
+    font-size: 1.25rem; /* Font size for paragraphs */
+    margin: 0; /* Remove default margin */
+}
+
 
 .btn-custom:hover {
     background-color: #0056b3; /* Darker blue on hover */
