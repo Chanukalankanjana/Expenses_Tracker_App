@@ -1,12 +1,10 @@
 document.getElementById('income-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting normally
+    event.preventDefault(); 
 
-    // Get input values
     const description = document.getElementById('income-description').value.trim();
     const amount = document.getElementById('income-amount').value.trim();
     const date = document.getElementById('income-date').value.trim();
 
-    // Check if all fields are filled
     if (description && amount && date) {
         Swal.fire({
             title: 'Good job!',
@@ -26,15 +24,13 @@ document.getElementById('income-form').addEventListener('submit', function(event
 });
 
 document.getElementById('expense-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting normally
+    event.preventDefault(); 
 
-    // Get input values
     const description = document.getElementById('expense-description').value.trim();
     const amount = document.getElementById('expense-amount').value.trim();
     const date = document.getElementById('expense-date').value.trim();
-    const category = document.querySelector('.category-item.active'); // Get the selected category
+    const category = document.querySelector('.category-item.active'); 
 
-    // Check if all fields are filled and a category is selected
     if (description && amount && date && category) {
         Swal.fire({
             title: 'Good job!',
@@ -304,7 +300,6 @@ function updateChart() {
 
     window.expenseChart = new Chart(ctx, config);
 
-    // Update income and remaining amount display
     document.getElementById('total-income').textContent = totalIncome.toFixed(2);
     document.getElementById('total-expenses').textContent = totalExpenses.toFixed(2);
     document.getElementById('remaining-amount').textContent = remainingAmount.toFixed(2);
