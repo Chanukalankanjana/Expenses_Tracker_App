@@ -25,13 +25,13 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 85%;
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
     z-index: 1000; /* Ensure header stays on top */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px; /* Add some padding if needed */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add a shadow for better visibility */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Optional: add a shadow for better visibility */
 }
 
 .header-container img {
@@ -50,16 +50,45 @@ body {
 }
 
 .card {
-    border-radius: 10px;
-    border: 1px solid #e0e0e0;
-    background-color: #ffffff; /* Make sure cards have a background color */
-    color: #000000; /* Ensure text color is readable */
+    border-radius: 12px; /* Slightly increased border radius for smoother edges */
+    border: 1px solid #d0d0d0; /* Softer border color for a modern look */
+    background-color: #ffffff; /* Ensuring the background color is set */
+    color: #000000; /* Ensuring text color is readable */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
 
 .card-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
+    font-size: 1.75rem; /* Slightly larger font size for prominence */
+    font-weight: 600; /* Semi-bold for a balanced weight */
+    color: #333; /* Consistent color */
+    margin-bottom: 10px; /* Spacing below the title */
+    border-bottom: 2px solid #e0e0e0; /* Subtle underline effect */
+    padding-bottom: 5px; /* Padding for the underline effect */
+}
+
+.card-body {
+    padding: 20px; /* Consistent padding inside the card */
+}
+
+.card-text {
+    font-size: 1rem; /* Standard font size for text */
+    line-height: 1.6; /* Improved readability with line height */
+    color: #555; /* Slightly lighter text color for less emphasis */
+}
+
+.card-footer {
+    background-color: #f7f7f7; /* Light background for the footer */
+    padding: 15px; /* Consistent padding for the footer */
+    border-top: 1px solid #e0e0e0; /* Border to separate footer */
+    text-align: center; /* Center align footer text */
+    font-size: 0.875rem; /* Smaller font size for footer text */
+    color: #777; /* Lighter color for footer text */
 }
 
 .category-item {
@@ -143,17 +172,17 @@ body {
 }
 
 .bg-custom-income {
-    background-color: #28a745; /* Green */
+    background-color: #00ab28; /* Green */
     color: #ffffff; /* White text */
 }
 
 .bg-custom-expenses {
-    background-color: #ff5733; /* Red-Orange */
+    background-color: #eeb300; /* Red-Orange */
     color: #ffffff; /* White text */
 }
 
 .bg-custom-remaining {
-    background-color: #17a2b8; /* Teal */
+    background-color: #00379e; /* Teal */
     color: #ffffff; /* White text */
 }
 
