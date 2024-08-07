@@ -212,6 +212,59 @@ function updateSummary() {
     document.getElementById('remaining-amount').innerText = remainingAmount.toFixed(2);
 }
 
+function updateChart() {
+    const expenses = JSON.parse(localStorage.getItem('expenses')) || [];
+    const incomes = JSON.parse(localStorage.getItem('incomes')) || [];
+    const categories = ['Bills', 'Vehicle', 'Clothes', 'Communication', 'Eating Out', 'Entertainment', 'Food', 'Gifts', 'Health', 'House', 'Pets', 'Sports', 'Taxi', 'Toiletry', 'Other'];
+
+    const categoryTotals = categories.map(category => {
+        return expenses
+            .filter(exp => exp.category === category)
+            .reduce((total, exp) => total + parseFloat(exp.amount), 0);
+    });
+
+    const totalIncome = incomes.reduce((total, inc) => total + parseFloat(inc.amount), 0);
+    const totalExpenses = categoryTotals.reduce((total, amount) => total + amount, 0);
+    const remainingAmount = totalIncome - totalExpenses;
+
+    // Update chart
+    const ctx = document.getElementById('expense-chart').getContext('2d');
+    if (window.expenseChart) {
+        window.expenseChart.destroy();
+    }
+
+    const config = {
+        type: 'pie',
+        data: {
+            labels: categories,
+            datasets: [{
+                label: 'Expenses',
+                data: categoryTotals,
+                backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745', '#17a2b8', '#6c757d', '#ff5733', '#33ff57', '#3357ff', '#ff33a8', '#33fff4', '#b833ff', '#ff5733', '#ff9f33', '#ffdd33']
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top'
+                },
+                title: {
+                    display: true,
+                    text: `Expense Distribution (${totalIncome.toFixed(2)}, ${totalExpenses.toFixed(2)}, ${remainingAmount.toFixed(2)})`
+                }
+            }
+        }
+    };
+
+    window.expenseChart = new Chart(ctx, config);
+
+    // Update income and remaining amount display
+    document.getElementById('total-income').textContent = totalIncome.toFixed(2);
+    document.getElementById('total-expenses').textContent = totalExpenses.toFixed(2);
+    document.getElementById('remaining-amount').textContent = remainingAmount.toFixed(2);
+}
+
 function initApp() {
     displayExpenses();
     displayIncomes();
