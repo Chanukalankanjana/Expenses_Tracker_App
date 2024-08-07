@@ -152,7 +152,7 @@ body {
 .summary-box {
     padding: 20px; /* Consistent padding */
     border-radius: 10px; /* Rounded corners */
-    color: #ffffff; /* White text color */
+    color: #14c400; /* White text color */
     text-align: center; /* Center text alignment */
     height: 150px; /* Fixed height to ensure uniform size */
     display: flex; /* Flexbox for centering content */
@@ -161,15 +161,18 @@ body {
 }
 
 .bg-custom-income {
-    background-color: #28a745; /* Green background for income */
+    background-color: #ffffff; /* Ensure background color for better visibility */
+    border: 1px solid #007bff; /* Button border color */
 }
 
 .bg-custom-expenses {
-    background-color: #dc3545; /* Red background for expenses */
+    background-color: #ffffff; /* Ensure background color for better visibility */
+    border: 1px solid #007bff; /* Button border color */
 }
 
 .bg-custom-remaining {
-    background-color: #ffc107; /* Yellow background for remaining amount */
+    background-color: #ffffff; /* Ensure background color for better visibility */
+    border: 1px solid #007bff; /* Button border color */
 }
 
 .summary-box h4 {
