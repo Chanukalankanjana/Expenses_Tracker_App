@@ -171,6 +171,19 @@ function displayExpenses() {
     `).join('');
 }
 
+function editExpense(id) {
+    const expenses = JSON.parse(localStorage.getItem('expenses')) || [];
+    const expense = expenses.find(exp => exp.id === id);
+
+    document.getElementById('expense-description').value = expense.description;
+    document.getElementById('expense-amount').value = expense.amount;
+    document.getElementById('expense-date').value = expense.date;
+
+    editExpenseId = id;
+    selectedCategory = expense.category;
+    document.querySelectorAll('.category-item').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`[data-category="${selectedCategory}"]`).classList.add('active');
+}
 
 
 
