@@ -55,3 +55,41 @@ function addIncome() {
     updateChart();
     clearIncomeForm();
 }
+
+function clearIncomeForm() {
+    document.getElementById('income-description').value = '';
+    document.getElementById('income-amount').value = '';
+    document.getElementById('income-date').value = '';
+    editIncomeId = null;
+}
+
+function displayIncomes() {
+    const incomesList = document.getElementById('income-list');
+    if (!incomesList) {
+        console.error('Element with ID "incomes-list" not found.');
+        return;
+    } 
+
+    const incomes = JSON.parse(localStorage.getItem('incomes')) || [];
+    incomesList.innerHTML = incomes.map(inc => `
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <h5>${inc.description}</h5>
+                <small>${inc.date}</small>
+            </div>
+            <div>
+                <span>Rs. ${inc.amount}</span>
+                <div class="income-actions">
+                    <button class="btn btn-sm btn-warning" onclick="editIncome(${inc.id})">Edit</button>
+                    <button class="btn btn-sm btn-danger" onclick="deleteIncome(${inc.id})">Delete</button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function initApp() {
+    displayIncomes();
+}
+
+document.addEventListener('DOMContentLoaded', initApp);
