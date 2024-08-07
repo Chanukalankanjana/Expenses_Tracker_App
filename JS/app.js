@@ -64,11 +64,11 @@ function clearIncomeForm() {
 }
 
 function displayIncomes() {
-    const incomesList = document.getElementById('income-list');
+    const incomesList = document.getElementById('incomes-list');
     if (!incomesList) {
         console.error('Element with ID "incomes-list" not found.');
         return;
-    } 
+    }
 
     const incomes = JSON.parse(localStorage.getItem('incomes')) || [];
     incomesList.innerHTML = incomes.map(inc => `
@@ -88,8 +88,33 @@ function displayIncomes() {
     `).join('');
 }
 
-function initApp() {
+function editIncome(id) {
+    const incomes = JSON.parse(localStorage.getItem('incomes')) || [];
+    const income = incomes.find(inc => inc.id === id);
+
+    document.getElementById('income-description').value = income.description;
+    document.getElementById('income-amount').value = income.amount;
+    document.getElementById('income-date').value = income.date;
+
+    editIncomeId = id;
+}
+
+function deleteIncome(id) {
+    let incomes = JSON.parse(localStorage.getItem('incomes'));
+    incomes = incomes.filter(inc => inc.id !== id);
+    localStorage.setItem('incomes', JSON.stringify(incomes));
     displayIncomes();
+    updateChart();
+}
+
+
+
+
+function initApp() {
+    displayExpenses();
+    displayIncomes();
+    updateSummary();
+    updateChart();
 }
 
 document.addEventListener('DOMContentLoaded', initApp);

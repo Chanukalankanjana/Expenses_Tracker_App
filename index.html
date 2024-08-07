@@ -39,10 +39,10 @@
                                 <button type="submit" class="btn btn-outline-primary btn-block">Add Income</button>
                             </form>
                         </div>
-
+    
                         <div class="card p-4 shadow-sm mb-4">
                             <h2 class="card-title mb-4">Add Expense</h2>
-                            <form id="expenses-form">
+                            <form id="expense-form">
                                 <div class="mb-3">
                                     <label for="expense-description" class="form-label">Description</label>
                                     <input type="text" class="form-control" id="expense-description" placeholder="e.g., Groceries" required>
@@ -124,23 +124,24 @@
                             </form>
                         </div>
                     </div>
-
+    
                     <div class="col-lg-6">
                         <div class="card p-4 shadow-sm mb-4">
                             <h2 class="card-title mb-4">Incomes</h2>
-                            <div id="icomes-list" class="list-group"></div>
+                            <div id="incomes-list" class="list-group"></div>
                         </div>
-
+    
+                        
                         <div class="card p-4 shadow-sm mb-4">
                             <h2 class="card-title mb-4">Expenses</h2>
                             <div id="expenses-list" class="list-group"></div>
                         </div>
-
+    
                         <div class="card p-4 shadow-sm mb-4">
-                            <h2 class="card-title mb-4">Expense Visualization</h2>
+                            <h2 class="card-title mb-4">Expenses Visualization</h2>
                             <canvas id="expense-chart"></canvas>
                         </div>
-
+    
                         <div class="card p-4 shadow-sm">
                             <h2 class="card-title mb-4 text-center">Income & Remaining Amount</h2>
                             <div id="income-summary" class="mb-4 text-center">
@@ -165,13 +166,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-outline-primary btn-block">Clear Summary</button>
+                            <button id="clear-summary-btn" class="btn btn-custom">Clear Summary</button>
                         </div>                              
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="JS/app.js"></script>
 </body>

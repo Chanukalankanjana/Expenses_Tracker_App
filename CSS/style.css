@@ -91,6 +91,13 @@ body {
     color: #777; /* Lighter color for footer text */
 }
 
+#income-form .form-control,
+#expense-form .form-control {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 12px;
+}
+
 .category-item {
     display: flex;
     flex-direction: column; /* Align items vertically */
@@ -132,13 +139,6 @@ body {
 
 .btn-outline-primary {
     border-radius: 8px;
-}
-
-#income-form .form-control,
-#expense-form .form-control {
-    border-radius: 8px;
-    border: 1px solid #ced4da;
-    padding: 12px;
 }
 
 #expense-chart {
