@@ -193,6 +193,25 @@ function deleteExpense(id) {
     updateChart();
 }
 
+function clearSummary() {
+    document.getElementById('total-income').innerText = '0';
+    document.getElementById('total-expenses').innerText = '0';
+    document.getElementById('remaining-amount').innerText = '0';
+}
+
+function updateSummary() {
+    const incomes = JSON.parse(localStorage.getItem('incomes')) || [];
+    const expenses = JSON.parse(localStorage.getItem('expenses')) || [];
+    
+    const totalIncome = incomes.reduce((total, inc) => total + parseFloat(inc.amount), 0);
+    const totalExpenses = expenses.reduce((total, exp) => total + parseFloat(exp.amount), 0);
+    const remainingAmount = totalIncome - totalExpenses;
+
+    document.getElementById('total-income').innerText = totalIncome.toFixed(2);
+    document.getElementById('total-expenses').innerText = totalExpenses.toFixed(2);
+    document.getElementById('remaining-amount').innerText = remainingAmount.toFixed(2);
+}
+
 function initApp() {
     displayExpenses();
     displayIncomes();
