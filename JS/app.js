@@ -14,6 +14,8 @@ document.getElementById('income-form').addEventListener('submit', function(event
 
         addIncome();
 
+        console.log('income added succefully');
+
     } else {
         Swal.fire({
             title: 'Error!',
@@ -39,6 +41,8 @@ document.getElementById('expense-form').addEventListener('submit', function(even
         });
 
         addExpense();
+
+        console.log('expense added succefully');
 
     } else {
         Swal.fire({
