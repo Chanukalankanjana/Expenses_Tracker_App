@@ -2,7 +2,10 @@ body {
     background-color: #f0f2f5;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0; 
-    padding: 0; 
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow-x: hidden; 
 }
 
@@ -56,6 +59,7 @@ body {
     color: #000000; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    margin-bottom: 20px;
 }
 
 .card:hover {
@@ -145,8 +149,32 @@ body {
     height: 300px;
 }
 
-.card-body {
-    padding: 20px;
+.list-group {
+    max-height: 258px; /* Set the maximum height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.list-group-item {
+    border: 1px solid #dee2e6; /* Optional: Border for list items */
+    padding: 10px; /* Padding for each list item */
+    margin-bottom: 5px; /* Space between list items */
+    border-radius: 8px; /* Rounded corners for list items */
+    background-color: #ffffff; /* Background color for list items */
+}
+
+.list-group::-webkit-scrollbar {
+    width: 8px; /* Adjust scrollbar width */
+}
+
+.list-group::-webkit-scrollbar-thumb {
+    background-color: #007bff; /* Scrollbar color */
+    border-radius: 4px; /* Rounded scrollbar */
+}
+
+.list-group::-webkit-scrollbar-track {
+    background: #f0f2f5; /* Background of the scrollbar track */
 }
 
 .summary-box {
